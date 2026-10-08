@@ -25,13 +25,13 @@ class Booking {
   });
 
   factory Booking.fromJson(Map<String, dynamic> j) => Booking(
-    id: j['bookingId'],
-    code: j['bookingCode'],
-    cementType: j['cementType'],
-    quantityTon: (j['quantityTon'] as num).toDouble(),
-    date: DateTime.parse(j['bookingDate']),
-    status: j['status'],
-  );
+        id: j['bookingId'],
+        code: j['bookingCode'],
+        cementType: j['cementType'],
+        quantityTon: (j['quantityTon'] as num).toDouble(),
+        date: DateTime.parse(j['bookingDate']),
+        status: j['status'],
+      );
 }
 
 // ---------- تفاصيل حجز ----------
@@ -57,18 +57,18 @@ class BookingDetails {
   });
 
   factory BookingDetails.fromJson(Map<String, dynamic> j) => BookingDetails(
-    id: j['bookingId'],
-    code: j['bookingCode'],
-    cementType: j['cementType'],
-    status: j['status'],
-    quantityTon: (j['quantityTon'] as num).toDouble(),
-    date: DateTime.parse(j['bookingDate']),
-    createdAt: DateTime.parse(j['createdAt']),
-    driverName: j['driverName'],
-    plateNumber: j['plateNumber'],
-    driverMobile: j['driverMobile'],
-    deliveryLocation: j['deliveryLocation'],
-  );
+        id: j['bookingId'],
+        code: j['bookingCode'],
+        cementType: j['cementType'],
+        status: j['status'],
+        quantityTon: (j['quantityTon'] as num).toDouble(),
+        date: DateTime.parse(j['bookingDate']),
+        createdAt: DateTime.parse(j['createdAt']),
+        driverName: j['driverName'],
+        plateNumber: j['plateNumber'],
+        driverMobile: j['driverMobile'],
+        deliveryLocation: j['deliveryLocation'],
+      );
 }
 
 // ---------- بيانات العميل ----------
@@ -85,13 +85,13 @@ class Me {
   });
 
   factory Me.fromJson(Map<String, dynamic> j) => Me(
-    fullName: j['fullName'],
-    companyName: j['companyName'],
-    mobile: j['mobile'],
-    commercialReg: j['commercialReg'],
-    totalBookings: j['totalBookings'],
-    activeBookings: j['activeBookings'],
-  );
+        fullName: j['fullName'],
+        companyName: j['companyName'],
+        mobile: j['mobile'],
+        commercialReg: j['commercialReg'],
+        totalBookings: j['totalBookings'],
+        activeBookings: j['activeBookings'],
+      );
 }
 
 // ---------- إشعار ----------
@@ -110,13 +110,13 @@ class AppNotif {
   });
 
   factory AppNotif.fromJson(Map<String, dynamic> j) => AppNotif(
-    id: j['notificationId'],
-    bookingId: j['bookingId'],
-    bookingCode: j['bookingCode'],
-    status: j['status'],
-    isRead: j['isRead'],
-    createdAt: DateTime.parse(j['createdAt']),
-  );
+        id: j['notificationId'],
+        bookingId: j['bookingId'],
+        bookingCode: j['bookingCode'],
+        status: j['status'],
+        isRead: j['isRead'],
+        createdAt: DateTime.parse(j['createdAt']),
+      );
 }
 
 class ApiService {
@@ -126,9 +126,9 @@ class ApiService {
   static void logout() => _token = null;
 
   static Map<String, String> _headers({bool auth = false}) => {
-    'Content-Type': 'application/json',
-    if (auth && _token != null) 'Authorization': 'Bearer $_token',
-  };
+        'Content-Type': 'application/json',
+        if (auth && _token != null) 'Authorization': 'Bearer $_token',
+      };
 
   static dynamic _handle(http.Response r) {
     dynamic body;
