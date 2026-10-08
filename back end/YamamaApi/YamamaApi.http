@@ -1,0 +1,6 @@
+@YamamaApi_HostAddress = http://localhost:5058
+
+GET {{YamamaApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
